@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Montserrat;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #dbdbdb;
+}
+
+/* Header Styles */
+header {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+}
+
+.about {
+  background-color: #fff;
+  max-width: 1500px;
+  margin: 1rem auto;
+  font-size: 1rem;
+  color: #34495e;
+  text-align: justify;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+}
+
+/* Main Content */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.featured {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.featured img {
+  width: 100%;
+  max-width: 700px;
+  border-radius: 8px;
+  box-shadow: 1px 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.featured h2 {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+}
+
+.genres button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.genres button:hover {
+  background-color: #45a049;
+}
+
+/* Radio Player */
+.player {
+  text-align: center;
+  padding: 1rem;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.player audio {
+  width: 100%;
+  max-width: 500px;
+  margin-top: 1rem;
+}
+
+.btn {
+  padding: 12px 24px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #4CAF50; /* Green color */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #45a049; /* Darker green on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px); /* Lift effect */
+}
+
+.btn:active {
+  background-color: #3e8e41; /* Even darker green on click */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(0); /* Reset lift effect */
+}

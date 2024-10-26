@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lounge 96.0 FM</title>
+  <link href="style.css" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <h1>LOUNGE FM</h1>
+    <p>Immerse Yourself in the World of Relaxing Beats and Smooth Melodies</p>
+  </header>
+
+  <section class="about">
+    <p style="margin-bottom: 3rem;">Welcome to Lounge FM, where the art of relaxation meets timeless melodies. Whether
+      you're unwinding after a long
+      day, focusing on creative work, or simply looking to elevate your mood, Lounge FM offers the perfect soundtrack.
+      From smooth jazz and chill electronic to soulful beats, our curated playlists are crafted to bring calm and
+      elegance into any space. Tune in, relax, and let the music take you to a place of tranquility.</p>
+    <p style="text-align: center;">For more music and information, <a href="https://www.loungefm.net/" target="_blank"
+        style="color: #333;">VISIT
+        THE OFFICIAL LOUNGE FM WEBSITE</a>.</p>
+  </section>
+
+
+  <main class="container">
+
+    <!-- Featured Station Section -->
+    <section class="featured">
+      <img src="images/loungefm.png" alt="Radio Station Image">
+      <h2>Best radio ever.</h2>
+    </section>
+
+    <!-- Player Section -->
+    <section class="player">
+      <button class="btn" id="playBtn">LISTEN LIVE<i class="fas fa-play"></i></button>
+      <div style="display: none;">
+        <audio id="radio" controls="" preload="none" style="width:16em;padding:0;">
+          <source src="https://edge1.radyotvonline.net/shoutcast/play/loungefm" type="audio/mpeg">
+        </audio>
+      </div>
+    </section>
+
+  </main>
+  <script>
+    $('#playBtn').click(function () {
+      if ($('#radio')[0].paused == false) {
+        $('#radio')[0].pause();
+        $('#playBtn i').attr('class', "fas fa-play");
+      } else {
+        $('#radio')[0].play();
+        $('#playBtn i').attr('class', "fas fa-pause");
+      }
+    });
+    if (/Android|webOS|iPhone|iPad|Mac|Macintosh|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      lightbox.option({
+        "fitImagesInViewport": false,
+        "maxWidth": $(window).width(),
+        "alwaysShowNavOnTouchDevices": true
+      });
+    }
+    else {
+      lightbox.option({
+        "fitImagesInViewport": false
+      });
+    }
+    $(document).ready(function () {
+      setInterval(function () {
+        var numb = Math.floor((Math.random() * 10000000) + 1);
+        $.ajax({
+          url: "https://" + window.location.hostname + "/BILLBOARD.txt?hash=" + numb,
+          type: 'get',
+          success: function (response) {
+            $('#nowPlaying').html("<b>Now Playing: </b>" + response.replace(/_/g, " "));
+          }
+        });
+      }, 1000);
+    });
+
+  </script>
+  <div id="lightbox" tabindex="-1" class="lightbox" style="display: none;">
+    <div class="lb-outerContainer">
+      <div class="lb-container"><img class="lb-image"
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="">
+        <div class="lb-nav"><a class="lb-prev" aria-label="Previous image" href=""></a><a class="lb-next"
+            aria-label="Next image" href=""></a></div>
+        <div class="lb-loader"><a class="lb-cancel"></a></div>
+      </div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+
+</html>

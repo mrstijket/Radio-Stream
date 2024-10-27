@@ -1,8 +1,8 @@
 require('dotenv').config();
 
-const apiToken = process.env.AudD_API_KEY;   // '4bd31266e1b1b46438919ff3291f73a7';
-const callbackUrl = 'https://yourwebsite.com/callbacks_handler'; // Replace with your callback URL
-const streamUrl = 'https://edge1.radyotvonline.net/shoutcast/play/loungefm'; // Replace with your stream URL
+const apiToken = process.env.AudD_API_KEY;
+const callbackUrl = 'https://http://127.0.0.1:5500/callbacks_handler'; // Replace with your callback URL
+const streamUrl = 'https://edge1.radyotvonline.net/shoutcast/play/loungefm';
 const radioId = 1; // Any integer to identify the stream
 
 // Set the callback URL
